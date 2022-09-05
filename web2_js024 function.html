@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>함수 function</title>
+</head>
+<body>
+  <h1>Function</h1>
+  <h2>Basic</h2>
+  <ul>
+    <script>
+      function two(){
+        document.write('<li>2-1</li>');
+        document.write('<li>2-2</li>');
+      }
+      document.write('<li>1</li>');
+      two();
+      document.write('<li>3</li>');
+      two();
+    </script>
+  </ul>
+  <h2>Parameter & Argument 매개변수(입력) 인자</h2>
+  <script>
+    function onePlusOne(){
+      document.write(1+1+'<br/>');
+    }
+    onePlusOne();
+    function sum(left,right){ //left right 같은걸 parameter 매개변수
+      document.write(left+right+'<br/>');
+    }
+    sum(2,3); //2,3같은걸 argument
+    sum(3,4);
+  </script>
+  <h2>Return 출력</h2>
+  <script>
+    function sum2(left,right){ 
+      return left+right;
+    }
+    document.write(sum2(2,3)+'<br/>');
+    document.write('<div style="color:red;">'+sum2(2,3)+'<div>');
+    document.write('<div style="font-size:3rem; color:blue;">'+sum2(2,3)+'<div>');
+    
+  </script>
+</body>
+</html>
