@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+      function LinksSetColor(color){
+        var alist = document.querySelectorAll('a');
+            var i = 0;
+            while(i < alist.length){
+            alist[i].style.color = color;
+            i = i+1;  
+        }
+      }
+      function BodySetColor(color){
+        document.querySelector('body').style.color = color;
+        //ducument라는 객체에 속해있는 queryseletor라는 함수
+        //객체에 속해있는 함수는 '메소드(method)'로 부름
+      }
+      function BodySetBackgroundColor(color){
+        document.querySelector('body').style.backgroundColor = color;
+      }
+      function nightDayHandler(self){
+        var target = document.querySelector('body');
+            if(self.value === 'night'){
+              BodySetBackgroundColor('black');
+              BodySetColor('white');
+              self.value = 'day';
+
+              LinksSetColor('powderblue');
+      } else {
+              BodySetBackgroundColor('white');
+              BodySetColor('black');
+              self.value = 'night';
+        
+              LinksSetColor('blue');
+            }
+      }      
+      
+    </script>
+    <title>object 객체 </title>
+</head>
+<body>
+  <h1>Object</h1>
+  <h2>Create</h2>
+  <p>객체:이름있는 정리상자/ 배열은 대괄호,객체는 중괄호</p>
+  <p>객체 생성법,객체 데이터 가져오는법, 데이터 넣는법</p>
+  <script>
+    var coworkers = {
+      "programmer":"egoing",
+      "designer":"leezche"
+    };
+    document.write("programmer : "+coworkers.programmer +"<br/>");
+    //코워커 뒤에있는 .은 object access operator 객체에 접근하는 오퍼레이터
+    document.write("designer : "+coworkers.programmer+"<br/>");
+    coworkers.bookkeeper = "duru";
+    document.write("designer : "+coworkers.bookkeeper+"<br/>");
+    coworkers["data scientist"] = "taeho"
+    document.write("data scientist : "+coworkers["data scientist"]+"<br/>");
+  </script>
+
+</body>
+</html>
