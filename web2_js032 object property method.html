@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>객체와 반복문</title>
+</head>
+<body>
+  <h1>Object</h1>
+  <h2>Create</h2>
+  <p>객체:이름있는 정리상자/ 배열은 대괄호,객체는 중괄호</p>
+  <p>객체 생성법,객체 데이터 가져오는법, 데이터 넣는법</p>
+  <script>
+    var coworkers = {
+      "programmer":"egoing",
+      "designer":"leezche"
+    };
+    document.write("programmer : "+coworkers.programmer +"<br/>");
+    //코워커 뒤에있는 .은 object access operator 객체에 접근하는 오퍼레이터
+    document.write("designer : "+coworkers.programmer+"<br/>");
+    coworkers.bookkeeper = "duru";
+    document.write("designer : "+coworkers.bookkeeper+"<br/>");
+    coworkers["data scientist"] = "taeho"
+    document.write("data scientist : "+coworkers["data scientist"]+"<br/>");
+  </script>
+  <h2>Interate</h2>
+  <script>
+    for(var key in coworkers) {
+      //코워커속에 있는 키값을 가져오는 반복문
+      //key값은 정보에 도달할 수있는 열쇠 programmer,designer
+      document.write(key+'<br>');
+      document.write(coworkers[key]+'<br>');
+      document.write(key+' + '+coworkers[key]+'<br>');
+    }
+  </script>
+  <h2>Property & Method</h2>
+  <script>
+    coworkers.showAll = function(){
+      //객체에는 함수를 담을 수 있다
+      //function showAll(){}와 같은 것
+      //코워커스에있는 모든 것을 보여 줌
+    for(var key in this) {
+      document.write(key+' + '+this[key]+'<br>');
+    }
+    }
+    coworkers.showAll();
+  </script>
+</body>
+</html>
