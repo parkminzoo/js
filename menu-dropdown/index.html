@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>menu-dropdown</title>
+</head>
+<body>
+    <header>
+        <nav>
+                <ul class="clearfix mainmenu">
+                    <li><a>menu</a> 
+                            <ul class="submenu">
+                                <li>2nd menu</li>
+                                <li>2nd menu</li>
+                            </ul>
+                    </li>
+                    <li><a>2nd menu</a> 
+                            <ul class="submenu">
+                                <li>2nd menu menu</li>
+                                <li>2nd menu</li>
+                                <li>2nd menu</li>
+                                <li>2nd menu</li>
+                            </ul>
+                    </li>
+                    <li><a>3rd menu</a> 
+                            <ul class="submenu">
+                                <li>2nd menu</li>
+                                <li>2nd menu</li>
+                            </ul>
+                    </li>
+                    <li><a>4th menu</a> 
+                            <ul class="submenu">
+                                <li>2nd menu</li>
+                                <li>2nd menu</li>
+                                <li>2nd menu</li>
+                            </ul>
+                    </li>				
+    
+                </ul>
+        </nav>
+    </header>
+    <p>
+        dsfwegasgsdfsjkfwlefhosdfjsfaw;efjaosdjflsdjflkif;oweifjs;dljfsdkljfoaisdjf;lsdjfkajsdfo;ijwefjdsfhosahgosaij;
+    </p>
+    <script>
+    //     var header = document.querySelector('header'),
+    //         nav = document.querySelector('nav');
+    //     /*
+    //     nav에 마우스를 올리면 header높이가 270으로 변경
+    //     마우스가 나가면 높이50으로 변경
+    //     */
+    //     nav.addEventListener('mouseover',function(){
+    //         header.style.height = '270px';
+    //     nav.addEventListener('mouseout',function(){
+    //         header.style.height = '50px';
+    //     })
+    //    })
+
+    var header = document.querySelector('header'),
+        mainMenuList = document.querySelectorAll('.mainmenu > li'),
+        subMenu = document.querySelectorAll('.submenu'),
+        headerHeight = header.offsetHeight,
+        subMenuHeight = 0;
+
+        /*
+        var B = A.offsetHeight; // border까지의 높이
+        var B = A.clientHeight; // padding까지의 높이
+        */
+       /*
+       변수명 subMenuHeight에 subMenu중에서 가장 높이가 큰 요소의 높이를 구해서 저장
+       */
+      console.log(subMenu);
+
+    //   subMenuHeight = subMenu[0].offsetHeight;
+    //   subMenuHeight = subMenu[1].offsetHeight;
+    //   subMenuHeight = subMenu[2].offsetHeight;
+    //   subMenuHeight = subMenu[3].offsetHeight;
+
+    // for(var i = 0; i < subMenu.length; i++){
+    //     if(subMenu[i].offsetHeight > subMenuHeight){
+    //    subMenuHeight = subMenu[i].offsetHeight;
+
+    //     }
+
+    // }
+    console.log(subMenuHeight);
+    /*
+    mainMenuList에 마우스를 올리면 
+    header의 높이를 headerHeight와 subMenuHeight를 더한 최종 크기로 변경
+    mainMenuList에 마우스를 나가면 headerHeight로 변경
+    */
+
+    // for(var i = 0; i < mainMenuList.length; i++){
+    //     mainMenuList[i].addEventListener('mouseover',function(){
+    //         /*마우스가 올라가 그 요소의 자식요소(ul)의 높이를 변수명 subMenuHeight저장하고
+    //         header의 높이를 headerHieght + subMenuHeight로 변경*/
+    //         header.style.height = headerHeight + subMenuHeight + 'px';
+    //     });
+    //     mainMenuList[i].addEventListener('mouseout',function(){
+    //         header.style.height = headerHeight + 'px';
+    //     });
+    // }
+
+    /*html에서 ul display:none; li:hover ul display:block; 상태로
+    만들어놓은 상태임
+    
+    위의
+        for(var i = 0; i < subMenu.length; i++){
+        if(subMenu[i].offsetHeight > subMenuHeight){
+       subMenuHeight = subMenu[i].offsetHeight;
+        }
+    }
+    생략시킴    
+    */
+
+    for(var i = 0; i < mainMenuList.length; i++){
+        mainMenuList[i].addEventListener('mouseover',function(){
+            /*마우스가 올라간 그 요소의 자식요소(ul)의 높이를 변수명 subMenuHeight저장하고
+            header의 높이를 headerHieght + subMenuHeight로 변경*/
+            subMenuHeight = this.querySelector('ul').offsetHeight;
+            header.style.height = headerHeight + subMenuHeight + 'px';
+        });
+        mainMenuList[i].addEventListener('mouseout',function(){
+            header.style.height = headerHeight + 'px';
+        });
+    }
+    </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+@charset "uft-8";
+
+* {margin:0; padding:0;}
+ul li {list-style:none;}
+.clearfix:after{content:'';display:block; clear:both;}
+body {background:green; overflow-y:scroll;padding-top:70px;}
+
+
+header {	
+    margin-top:20px;
+	background:linear-gradient(white 50px, blue 50px, rgba(255,255,255,0.5) );
+	height:50px; 
+	overflow:hidden;
+    transition:height 0.4s;
+    position:absolute;
+    left:0;right:0; top:0;
+}
+nav {width:960px; margin:0 auto;}
+nav > ul > li {
+    float:left; 
+    line-height:50px; 
+    position: relative;
+}
+nav > ul > li a{
+    display:block; padding:0 35px;
+    cursor:pointer;
+}
+nav > ul > li ul{ 
+    width:100%; position: absolute; display:none;
+}
+nav > ul > li ul li{white-space:nowrap;}
+nav > ul > li:hover ul{display:block;}
+
